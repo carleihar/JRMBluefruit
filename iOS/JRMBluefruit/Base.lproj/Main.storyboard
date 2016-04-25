@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idl-UH-zya">
+                                <rect key="frame" x="249" y="67" width="103" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="vPT-Oy-XhB">
+                                <rect key="frame" x="290" y="96" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gr5-Na-ZRz">
+                                <rect key="frame" x="275" y="174" width="50" height="223"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="S2t-9l-jMI"/>
+                                    <constraint firstAttribute="height" constant="223" id="fAu-IL-aHO"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="clear"/>
+                                <connections>
+                                    <action selector="greenButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RS0-xs-vUU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vPT-Oy-XhB" firstAttribute="top" secondItem="Idl-UH-zya" secondAttribute="bottom" constant="8" id="3cK-Cu-wFD"/>
+                            <constraint firstItem="Idl-UH-zya" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BOC-j5-sV6"/>
+                            <constraint firstItem="vPT-Oy-XhB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DSO-4N-0pi"/>
+                            <constraint firstItem="gr5-Na-ZRz" firstAttribute="top" secondItem="Idl-UH-zya" secondAttribute="bottom" constant="86" id="TIQ-F7-xno"/>
+                            <constraint firstItem="Idl-UH-zya" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="47" id="VG7-oh-CGF"/>
+                            <constraint firstItem="gr5-Na-ZRz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xpW-Ea-q8y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="vPT-Oy-XhB" id="5ol-Bf-J7U"/>
+                        <outlet property="connectingLabel" destination="Idl-UH-zya" id="91F-kq-y6X"/>
+                        <outlet property="greenLedButton" destination="gr5-Na-ZRz" id="FbR-ne-hGm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="clear" width="178" height="794"/>
+    </resources>
+</document>
