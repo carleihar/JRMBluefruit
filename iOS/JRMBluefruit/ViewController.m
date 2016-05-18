@@ -122,7 +122,7 @@
     for (int track = 0 ; track < values.count ; track++) {
         NSString *valueString = values[track];
         NSNumber *valueNumber = [self.numberFormatter numberFromString:valueString];
-        if (valueNumber.intValue > 350) {
+        if (valueNumber.intValue > 200) {
             [self.audioPlayer playTrack:track];
         }
         else {
