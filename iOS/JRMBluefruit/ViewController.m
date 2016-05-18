@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "JRMAudioPlayer.h"
 
 #define RX_UUID @"6E400003-B5A3-F393-E0A9-E50E24DCCA9E"
 #define TX_UUID @"6e400002-b5a3-f393-e0a9-e50e24dcca9e"
@@ -22,6 +23,9 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIButton *greenLedButton;
 
+@property (strong, nonatomic) JRMAudioPlayer *audioPlayer;
+@property (strong, nonatomic) NSNumberFormatter *numberFormatter;
+
 @property BOOL greenLedLit;
 
 @end
@@ -32,6 +36,12 @@
     [super viewDidLoad];
     self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
     self.greenLedButton.hidden = YES;
+    
+    self.audioPlayer = [[JRMAudioPlayer alloc] init];
+    [self.audioPlayer startSession];
+    
+    self.numberFormatter = [[NSNumberFormatter alloc] init];
+    self.numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
 }
 
 #pragma mark - CBCentralManagerDelegate
@@ -108,7 +118,35 @@
 // Invoked when you retrieve a specified characteristic's value, or when the peripheral device notifies your app that the characteristic's value has changed.
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
     NSString *stringFromData = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
+    NSArray *values = [ViewController valuesFromDataString:stringFromData];
+    for (int track = 0 ; track < values.count ; track++) {
+        NSString *valueString = values[track];
+        NSNumber *valueNumber = [self.numberFormatter numberFromString:valueString];
+        if (valueNumber.intValue > 350) {
+            [self.audioPlayer playTrack:track];
+        }
+        else {
+            [self.audioPlayer pauseTrack:track];
+        }
+    }
     NSLog(@"Received data: %@ from: %@", stringFromData, characteristic.UUID);
+}
+
++ (NSArray *)valuesFromDataString:(NSString *)dataString {
+    NSError* regexError = nil;
+    NSRegularExpression* regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d{1,100})" options:NSRegularExpressionCaseInsensitive|NSRegularExpressionDotMatchesLineSeparators error:&regexError];
+    if (regexError) {
+        NSLog(@"Regex creation failed with error: %@", [regexError description]);
+        return nil;
+    }
+    
+    NSArray *matches = [regex matchesInString:dataString options:NSMatchingWithoutAnchoringBounds range:NSMakeRange(0, dataString.length)];
+    NSMutableArray *mutableValues = [NSMutableArray array];
+    for (NSTextCheckingResult *result in matches) {
+        NSString *value = [dataString substringWithRange:result.range];
+        [mutableValues addObject:value];
+    }
+    return mutableValues.copy;
 }
 
 #pragma mark - Buttons
