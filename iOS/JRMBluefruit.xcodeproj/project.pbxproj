@@ -13,9 +13,16 @@
 		823787331CC93CCC00D53CB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823787311CC93CCC00D53CB0 /* Main.storyboard */; };
 		823787351CC93CCC00D53CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823787341CC93CCC00D53CB0 /* Assets.xcassets */; };
 		823787381CC93CCC00D53CB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823787361CC93CCC00D53CB0 /* LaunchScreen.storyboard */; };
+		D3DB7ADB1CE62AF100D2C611 /* JRMAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DB7ADA1CE62AF100D2C611 /* JRMAudioPlayer.m */; };
+		D3DB7ADE1CE62F7D00D2C611 /* layer_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D3DB7ADD1CE62F7D00D2C611 /* layer_1.mp3 */; };
+		D3F17E511CE63B92007C805E /* layer_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D3F17E4F1CE63B92007C805E /* layer_2.mp3 */; };
+		D3F17E521CE63B92007C805E /* layer_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D3F17E501CE63B92007C805E /* layer_3.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39DCEE5B4A8EC2675D795837 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		51AAFDDC823A080AEF20FBD8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		66B3A59D2688D30F2FE5D279 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		823787251CC93CCC00D53CB0 /* JRMBluefruit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JRMBluefruit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		823787291CC93CCC00D53CB0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8237872B1CC93CCC00D53CB0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,17 +33,12 @@
 		823787341CC93CCC00D53CB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		823787371CC93CCC00D53CB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		823787391CC93CCC00D53CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3DB7AD91CE62AF100D2C611 /* JRMAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRMAudioPlayer.h; sourceTree = "<group>"; };
+		D3DB7ADA1CE62AF100D2C611 /* JRMAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRMAudioPlayer.m; sourceTree = "<group>"; };
+		D3DB7ADD1CE62F7D00D2C611 /* layer_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = layer_1.mp3; sourceTree = "<group>"; };
+		D3F17E4F1CE63B92007C805E /* layer_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = layer_2.mp3; sourceTree = "<group>"; };
+		D3F17E501CE63B92007C805E /* layer_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = layer_3.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		823787221CC93CCC00D53CB0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		8237871C1CC93CCC00D53CB0 = {
@@ -44,6 +46,8 @@
 			children = (
 				823787271CC93CCC00D53CB0 /* JRMBluefruit */,
 				823787261CC93CCC00D53CB0 /* Products */,
+				FFD2BB637AAF4B59DC7693F8 /* Pods */,
+				C899DD29BD72B79A3FF56C78 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +66,9 @@
 				8237872C1CC93CCC00D53CB0 /* AppDelegate.m */,
 				8237872E1CC93CCC00D53CB0 /* ViewController.h */,
 				8237872F1CC93CCC00D53CB0 /* ViewController.m */,
+				D3DB7AD91CE62AF100D2C611 /* JRMAudioPlayer.h */,
+				D3DB7ADA1CE62AF100D2C611 /* JRMAudioPlayer.m */,
+				D3DB7ADF1CE62F8800D2C611 /* layers */,
 				823787311CC93CCC00D53CB0 /* Main.storyboard */,
 				823787341CC93CCC00D53CB0 /* Assets.xcassets */,
 				823787361CC93CCC00D53CB0 /* LaunchScreen.storyboard */,
@@ -79,6 +86,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C899DD29BD72B79A3FF56C78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66B3A59D2688D30F2FE5D279 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3DB7ADF1CE62F8800D2C611 /* layers */ = {
+			isa = PBXGroup;
+			children = (
+				D3DB7ADD1CE62F7D00D2C611 /* layer_1.mp3 */,
+				D3F17E4F1CE63B92007C805E /* layer_2.mp3 */,
+				D3F17E501CE63B92007C805E /* layer_3.mp3 */,
+			);
+			name = layers;
+			sourceTree = "<group>";
+		};
+		FFD2BB637AAF4B59DC7693F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				39DCEE5B4A8EC2675D795837 /* Pods.debug.xcconfig */,
+				51AAFDDC823A080AEF20FBD8 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -87,7 +121,6 @@
 			buildConfigurationList = 8237873C1CC93CCC00D53CB0 /* Build configuration list for PBXNativeTarget "JRMBluefruit" */;
 			buildPhases = (
 				823787211CC93CCC00D53CB0 /* Sources */,
-				823787221CC93CCC00D53CB0 /* Frameworks */,
 				823787231CC93CCC00D53CB0 /* Resources */,
 			);
 			buildRules = (
@@ -136,8 +169,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3F17E521CE63B92007C805E /* layer_3.mp3 in Resources */,
 				823787381CC93CCC00D53CB0 /* LaunchScreen.storyboard in Resources */,
+				D3F17E511CE63B92007C805E /* layer_2.mp3 in Resources */,
 				823787351CC93CCC00D53CB0 /* Assets.xcassets in Resources */,
+				D3DB7ADE1CE62F7D00D2C611 /* layer_1.mp3 in Resources */,
 				823787331CC93CCC00D53CB0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,6 +188,7 @@
 				823787301CC93CCC00D53CB0 /* ViewController.m in Sources */,
 				8237872D1CC93CCC00D53CB0 /* AppDelegate.m in Sources */,
 				8237872A1CC93CCC00D53CB0 /* main.m in Sources */,
+				D3DB7ADB1CE62AF100D2C611 /* JRMAudioPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +296,7 @@
 		};
 		8237873D1CC93CCC00D53CB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39DCEE5B4A8EC2675D795837 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JRMBluefruit/Info.plist;
@@ -270,6 +308,7 @@
 		};
 		8237873E1CC93CCC00D53CB0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51AAFDDC823A080AEF20FBD8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JRMBluefruit/Info.plist;
@@ -298,6 +337,7 @@
 				8237873E1CC93CCC00D53CB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
